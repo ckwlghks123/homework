@@ -17,12 +17,7 @@ db = pymysql.connect(host=host, port=int(port), user=user,
                      passwd=password, db='myschool', charset='utf8')
 
 
-@app.route('/')
-def hello_world():
-    return 'Hello World!'
-
-
-@app.route('/school', methods=['GET'])
+@app.route('/', methods=['GET'])
 def get_all_tables():
     cursor = db.cursor()
 
